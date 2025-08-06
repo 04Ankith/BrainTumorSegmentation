@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Results</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/">Brain Tumor Segmentation</a>
+    </div>
+  </nav>
+
+  <div class="container my-5 text-center">
+    <h2 class="text-primary mb-4">Prediction Results for: {{ filename }}</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header bg-secondary text-white">Input MRI Slice</div>
+          <div class="card-body">
+            <img src="/{{ input_img }}" class="img-fluid" alt="Input Image">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header bg-info text-white">Predicted Mask</div>
+          <div class="card-body">
+            <img src="/{{ mask_img }}" class="img-fluid" alt="Mask Image">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header bg-success text-white">Tumor Overlay</div>
+          <div class="card-body">
+            <img src="/{{ overlay_img }}" class="img-fluid" alt="Overlay Image">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-warning mt-5">
+      <strong>Note:</strong> Tumor Regions are color-coded: 
+      <span class="badge bg-danger">Enhancing Tumor</span>,
+      <span class="badge bg-primary">Non-Enhancing</span>,
+      <span class="badge bg-warning text-dark">FLAIR Hyperintensity</span>
+    </div>
+
+    <a href="/predict" class="btn btn-outline-primary mt-3">Try Another Prediction</a>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

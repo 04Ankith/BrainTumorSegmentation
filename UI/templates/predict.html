@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Brain Tumor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/">Brain Tumor Segmentation</a>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="card p-4 shadow-sm">
+      <h3 class="text-center text-primary mb-4">Upload MRI for Prediction</h3>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">\          <label for="nifti_file" class="form-label">Upload NIfTI MRI File (.nii or .nii.gz)</label>
+          <input class="form-control" type="file" name="nifti_file" required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success">Predict</button>
+          <a href="/" class="btn btn-secondary ms-2">Back to Home</a>
+        </div>
+      </form>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
