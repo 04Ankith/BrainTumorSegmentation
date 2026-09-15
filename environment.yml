@@ -1,0 +1,16 @@
+name: brain
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - numpy==1.26.4
+      - nibabel==5.3.2
+      - opencv-python==4.10.0.84
+      - matplotlib==3.9.4
+      - tensorflow==2.18.0
+      - scikit-learn==1.6.1
+      - scikit-image==0.24.0
